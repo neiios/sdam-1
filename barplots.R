@@ -30,6 +30,9 @@ make_barplot <- function(data, names, title) {
     )
 }
 
+# par(mfrow=c(1, 1))
+par(mfrow = c(2, 3)) # Six figures on the same plot. Doesn't look nice.
+
 make_barplot(
     data = data$Y1,
     names = data$Country,
@@ -60,3 +63,7 @@ make_barplot(
     names = data$Country,
     title = "Underachievement in mathematics, reading and science by country"
 )
+
+temp <- data
+temp$Country <- NULL
+plot(temp) # How can you even interpret this one?
