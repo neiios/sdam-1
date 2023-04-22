@@ -8,7 +8,7 @@ data <- read_xlsx(path = "data.xlsx", sheet = "2018")
 make_barplot <- function(data, names, title) {
     table <- data.frame(Data = data, Countries = names)
     sorted_data <- table[order(table$Data), ]
-    barplot(
+    bp <- barplot(
         height = sorted_data$Data,
         names = sorted_data$Countries,
         main = title,
@@ -16,7 +16,17 @@ make_barplot <- function(data, names, title) {
         col = "#69b3a2",
         cex.names = 0.6,
         horiz = TRUE,
-        las = 2
+        las = 2,
+        xlim = c(0, max(data) + 10)
+    )
+
+    # Add height labels to the bars
+    text(
+        x = sorted_data$Data,
+        y = bp,
+        labels = sorted_data$Data,
+        cex = 0.8,
+        pos = 4
     )
 }
 
