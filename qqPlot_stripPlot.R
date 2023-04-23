@@ -4,7 +4,7 @@ library("readxl") #excelio skaitymui
 library("ggpubr") #ggqqplot grafikui ir pan
 
 #Perskaitomas excel failas ir pakeičiamas į data frame (kad būtų patogiau brėžti grafikus)
-#kolega ta pati padare su path= bet man errora meta tai padariau taip
+#kolega ta pati padare su path= bet man errora 
 data <- read_excel("C:\\Users\\matas\\OneDrive\\Stalinis kompiuteris\\R\\Laboratorinis\\[8] ET_2020.xlsx", sheet = "2018")
 data <- data.frame(data)
 
